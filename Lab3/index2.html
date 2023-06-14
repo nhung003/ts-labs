@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="public/css/style.css" rel="stylesheet">
+    <title>Dao Thi Huong Nhung</title>
+</head>
+<body> 
+            <div class="main">
+                <h2 class="title">ASM</h2>
+                <div class="ghidiem">
+                    <span><button onclick="location.reload()">Chơi lại</button></span>
+                    Điểm số của bạn: <span id="diemso"></span>
+                </div>
+                <div id="divhinhdep"></div>
+            </div>
+</body>
+<script src="public/js/app2.js"></script>
+<script>
+      function updateScore() {
+    document.getElementById("diemso").innerText = diem;
+}
+
+</script>
+</html>

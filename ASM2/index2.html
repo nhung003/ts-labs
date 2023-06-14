@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="public/css/style.css" rel="stylesheet">
+    <title>Dao Thi Huong Nhung</title>
+</head>
+<body> 
+            <div class="main">
+                <div class="title">
+                    <h2>Trò chơi của tôi</h2>
+                </div>
+                <div class="content">
+                    <div class="left">
+                        <div id="divhinhdep"></div>
+                    </div>
+                    <div class="right">
+                       <button onclick="location.reload()"> Chơi lại</button>
+                       <p>Điểm số của bạn: <span id="diemso"></span></p>
+                        <div id="divnguoichoi"></div>
+                    </div>
+                </div>
+            </div>
+</body>
+<script src="public/js/app2.js"></script>
+<script>
+      function updateScore() {
+    document.getElementById("diemso").innerText = diem;
+}
+
+</script>
+</html>

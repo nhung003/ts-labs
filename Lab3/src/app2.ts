@@ -1,0 +1,79 @@
+
+var arr_hinh;
+arr_hinh = [
+  { id: 1, ten: 'Hoa lan', url: 'lan.jpg', mota: 'Lan có mùi thơm dễ chịu, sang trọng, tao nhã' },
+  { id: 2, ten: 'Anh đào', url: 'anhdao.jpg', mota: 'Hoa mỏng manh, tượng trưng cho sắc đẹp và tinh khiết' },
+  { id: 3, ten: 'Thiên điểu', url: 'thiendieu.jpg', mota: 'Hoa có dạng chú chim đầy màu sắc' },
+  { id: 4, ten: 'Hoa tigon', url: 'tigon.jpg', mota: 'Hoa màu hồng, cánh mỏng manh.Mọc thành từng chùm.' },
+  { id: 5, ten: 'Thược dược', url: 'thuocduoc.jpg', mota: 'Hoa có nhiều màu, đẹp ngất ngây lòng người,' },
+  { id: 6, ten: 'Cẩm tú cầu', url: 'camtucau.jpg', mota: 'Đẹp trang nhã, nhẹ nhàng. Sống lâu năm' },
+];
+
+var divHinhDep = document.getElementById('divhinhdep');
+var hien1hinh = function (h) {
+  divHinhDep.innerHTML += "\n    <div class=\"hinh\">\n    <img src='./public/images/"
+    .concat(h.url, "' title='")
+    .concat(h.mota, "'>\n    </div>\n    ");
+};
+
+
+arr_hinh.forEach(hien1hinh);
+var arr_hinh1 = arr_hinh.sort(function (a, b) { return 0.5 - Math.random(); });
+arr_hinh1.forEach(hien1hinh);
+var arrdivHinh = document.querySelectorAll('div.hinh');
+arrdivHinh.forEach(function (div) { return div.children.item(0).className = 'an'; });
+arrdivHinh.forEach(function (div) {
+  var img = div.children.item(0);
+  div.onclick = function () {
+    img.className = (img.className == 'an') ? 'hien' : 'an';
+  };
+});
+let diem = 0;
+let hinh1 = null;
+let hinh2 = null;
+
+arrdivHinh.forEach((div) => {
+  let chonHinh = (div) => {
+    let img = div.children.item(0);
+    if (hinh1 == null) {
+      hinh1 = img;
+      hinh1.parentElement.classList.add('click');
+      hinh1.className = 'hien';
+    } else if (hinh2 == null && !div.classList.contains('click')) {
+      hinh2 = img;
+      hinh2.parentElement.classList.add('click');
+      hinh2.className = 'hien';
+
+      if (hinh1.src === hinh2.src) {
+        diem += 3;
+        hinh1 = null;
+        hinh2 = null;
+        document.querySelectorAll('.click').forEach((div) => div.classList.remove('click'));
+        updateScore();
+        if (document.querySelectorAll('.an').length === 0) {
+          alert(`Chúc mừng, bạn đã chiến thắng với điểm số ${diem - 3}`);
+          location.reload();
+        }
+      } else {
+        diem -= 1;
+        updateScore();
+        setTimeout(() => {
+          hinh1.className = 'an';
+          hinh2.className = 'an';
+          hinh1.parentElement.classList.remove('click');
+          hinh2.parentElement.classList.remove('click');
+          hinh1 = null;
+          hinh2 = null;
+        }, 1000);
+      }
+    }
+  };
+
+  arrdivHinh.forEach((div) => {
+    div.onclick = () => {
+      chonHinh(div);
+    };
+  });
+})
+
+

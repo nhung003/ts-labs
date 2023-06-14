@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Phuong trinh bac 2</title>
+    <style>
+      
+    </style>
+</head>
+<body>
+   <div class="container">
+    <form name="frm" class="col-5 m-auto mt-5 border border-primary p-2">
+        <div class="mb-3">
+        <span>So lan choi: <b id="solangiai"></b></span>
+        </div>
+        <div class="mb-3">
+           Số A 
+          <input class="form-control" name="a" type="number" placeholder="Nhập hệ số a" id="a">
+        </div>
+        <div class="mb-3">
+           Số B 
+          <input class="form-control" name="b" type="number" placeholder="Nhập hệ số b" id="b">
+        </div>
+        <div class="mb-3">
+           Số C 
+          <input class="form-control" name="c" type="number" placeholder="Nhập hệ số c" id="c">
+        </div>
+        <div class="mb-3"> 
+           <button name="btn" class="btn btn-primary p-2" type="button" onclick="dem();ptb2(frm.a.value, frm.b.value, frm.c.value)">Tính nghiệm</button>
+           <button type="button" class="btn btn-primary p-2" id="btntaoso" onclick="taoso()">Tao so</button>
+           <button type="button" class="btn btn-primary p-2" id="btntaoso" onclick="xoa()">Xoa</button>
+        </div>
+        <div class="mb-3" id="ketqua"> 
+           Nghiệm của phương trình
+        </div>
+        </form>
+   </div>
+</body>
+<script src="vidu2.js"></script>
+<script>
+    // frm.btn.onclick = dem();
+    // ptb2(frm.a.value, frm.b.value, frm.c.value);
+</script>
+</html>

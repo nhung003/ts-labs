@@ -1,0 +1,14 @@
+.container{
+    width: 600px;
+    padding: 30px;
+    border: 1px solid black;
+    margin-top: 20px;
+    color: aliceblue;
+    border-radius: 5px;
+}
+body{
+    background-image: url(/public/images/hinhnen.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
